@@ -44,7 +44,7 @@ body {
 }
 
 .button {
-    background-color: rgb(71, 46, 50);
+    background-color: inherit;
     padding-left: 2%;
     padding-top: 3%;
     font-size: 0.7em;
