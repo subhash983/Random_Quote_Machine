@@ -1,0 +1,10 @@
+<div class="container">
+    <i class="fa fa-quote-left" aria-hidden="true"></i>
+    <p class="quoteText">{{ctrl.quoteText}}</p>
+    <p class="author">- {{ctrl.author}}</p>
+    <div class="icons" ng-style="ctrl.iconsbgColor">
+        <a href="#" class="twitterLink button"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="#" class="tumblrLink button"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
+        <input type="button" class="button" id="btnNextQuote" name="btnNextQuote" value="Next Quote" ng-click="ctrl.getNextQuote()">
+    </div>
+</div>

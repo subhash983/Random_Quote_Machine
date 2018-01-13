@@ -1,6 +1,6 @@
 import {colors, quotes} from './data.js';
 
-let app = angular.module('quoteMachineApp', []);
+let app = angular.module('quoteMachineApp', ['ngRoute']);
 
 app.controller('quoteMachineController', function(quotesData) {
     var self = this;
@@ -36,4 +36,8 @@ app.factory('quotesData', function($http) {
             return $http.get('http://localhost:4000/data');
         }
     };
+});
+
+app.config(function($routeProvider) {
+    $routeProvider.when('/', {templateUrl: './templates/quoteTemplate.html'}).otherwise({redirectTo: '/'});
 });

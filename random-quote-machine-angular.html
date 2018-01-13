@@ -7,22 +7,13 @@
     <title>Random Quote Machine</title>
     <script src="https://use.fontawesome.com/3ecfdd496d.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-route.js"></script>
     <script type="module" src="scripts/quoteAngular.js"></script>
     <link rel="stylesheet" href="/css/quote.css">
 </head>
 
 <body ng-style="ctrl.bgColor" ng-controller="quoteMachineController as ctrl">
-    <div class="container">
-        <i class="fa fa-quote-left" aria-hidden="true"></i>
-        <p class="quoteText">{{ctrl.quoteText}}</p>
-        <p class="author">- {{ctrl.author}}</p>
-        <div class="icons" ng-style="ctrl.iconsbgColor">
-            <a href="#" class="twitterLink button"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="#" class="tumblrLink button"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
-            <input type="button" class="button" id="btnNextQuote" name="btnNextQuote" value="Next Quote" ng-click="ctrl.getNextQuote()">
-        </div>
-    </div>
-
+    <div ng-view></div>
 </body>
 
 </html>
