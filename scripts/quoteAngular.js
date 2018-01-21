@@ -2,7 +2,8 @@ import {colors, quotes} from './data.js';
 
 let app = angular.module('quoteMachineApp', ['ngRoute']);
 
-app.controller('quoteMachineController', function(quotesData) {
+app.controller('quoteMachineController', function(quotesData, $routeParams) {
+    console.log($routeParams.author);
     var self = this;
     self.quoteText = "Life isn't about waiting for the storm to pass; it's about learning to dance in the rain.";
     self.author = 'Albert Einstein';
@@ -39,5 +40,7 @@ app.factory('quotesData', function($http) {
 });
 
 app.config(function($routeProvider) {
-    $routeProvider.when('/', {templateUrl: './templates/quoteTemplate.html'}).otherwise({redirectTo: '/'});
+    $routeProvider.when('/', {templateUrl: './templates/quoteTemplate.html'})
+    .when('/:author', {templateUrl: './templates/quoteTemplate.html',controller:'quoteMachineController'})
+    .otherwise({redirectTo: '/'});
 });
